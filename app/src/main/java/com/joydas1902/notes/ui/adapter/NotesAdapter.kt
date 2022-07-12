@@ -28,12 +28,11 @@ class NotesAdapter(var notesList: List<Notes>) : RecyclerView.Adapter<NotesAdapt
         holder.binding.notesItem.text = notes.notes
         holder.binding.notesDate.text = notes.date
 
-        if(notes.priority == "1")
-            holder.binding.notesPriority.setBackgroundResource(R.drawable.green_dot)
-        else if(notes.priority == "2")
-            holder.binding.notesPriority.setBackgroundResource(R.drawable.yellow_dot)
-        else
-            holder.binding.notesPriority.setBackgroundResource(R.drawable.red_dot)
+        when (notes.priority) {
+            "1" -> holder.binding.notesPriority.setBackgroundResource(R.drawable.green_dot)
+            "2" -> holder.binding.notesPriority.setBackgroundResource(R.drawable.yellow_dot)
+            "3" -> holder.binding.notesPriority.setBackgroundResource(R.drawable.red_dot)
+        }
 
         holder.binding.root.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToEditNotesFragment(notes)

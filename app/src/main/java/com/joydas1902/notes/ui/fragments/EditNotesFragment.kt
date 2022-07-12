@@ -32,23 +32,25 @@ class EditNotesFragment : Fragment() {
         binding.subTitle.setText(oldNotes.data.subTitle)
         binding.notes.setText(oldNotes.data.notes)
 
-        if(oldNotes.data.priority == "1") {
-            priority = "1"
-            binding.greenDot.setImageResource(R.drawable.ic_baseline_done_24)
-            binding.yellowDot.setImageResource(0)
-            binding.redDot.setImageResource(0)
-        }
-        else if(oldNotes.data.priority == "2") {
-            priority = "2"
-            binding.yellowDot.setImageResource(R.drawable.ic_baseline_done_24)
-            binding.greenDot.setImageResource(0)
-            binding.redDot.setImageResource(0)
-        }
-        else {
-            priority = "3"
-            binding.redDot.setImageResource(R.drawable.ic_baseline_done_24)
-            binding.greenDot.setImageResource(0)
-            binding.yellowDot.setImageResource(0)
+        when (oldNotes.data.priority) {
+            "1" -> {
+                priority = "1"
+                binding.greenDot.setImageResource(R.drawable.ic_baseline_done_24)
+                binding.yellowDot.setImageResource(0)
+                binding.redDot.setImageResource(0)
+            }
+            "2" -> {
+                priority = "2"
+                binding.yellowDot.setImageResource(R.drawable.ic_baseline_done_24)
+                binding.greenDot.setImageResource(0)
+                binding.redDot.setImageResource(0)
+            }
+            "3" -> {
+                priority = "3"
+                binding.redDot.setImageResource(R.drawable.ic_baseline_done_24)
+                binding.greenDot.setImageResource(0)
+                binding.yellowDot.setImageResource(0)
+            }
         }
 
         binding.greenDot.setOnClickListener {
