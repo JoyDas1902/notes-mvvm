@@ -23,7 +23,7 @@ class CreateNotesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCreateNotesBinding.inflate(layoutInflater, container, false)
 
         binding.redDot.setImageResource(R.drawable.ic_baseline_done_24)
@@ -34,12 +34,14 @@ class CreateNotesFragment : Fragment() {
             binding.yellowDot.setImageResource(0)
             binding.redDot.setImageResource(0)
         }
+
         binding.yellowDot.setOnClickListener {
             priority = "2"
             binding.yellowDot.setImageResource(R.drawable.ic_baseline_done_24)
             binding.greenDot.setImageResource(0)
             binding.redDot.setImageResource(0)
         }
+        
         binding.redDot.setOnClickListener {
             priority = "3"
             binding.redDot.setImageResource(R.drawable.ic_baseline_done_24)

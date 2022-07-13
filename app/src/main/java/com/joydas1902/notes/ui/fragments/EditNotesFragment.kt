@@ -25,7 +25,7 @@ class EditNotesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentEditNotesBinding.inflate(layoutInflater, container, false)
 
         binding.title.setText(oldNotes.data.title)
@@ -74,9 +74,7 @@ class EditNotesFragment : Fragment() {
             binding.yellowDot.setImageResource(0)
         }
 
-        binding.saveNoteButton.setOnClickListener {
-            updateNote(it)
-        }
+        binding.saveNoteButton.setOnClickListener { updateNote(it) }
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -108,7 +106,7 @@ class EditNotesFragment : Fragment() {
             val no = dialog.findViewById<TextView>(R.id.no)
 
             yes?.setOnClickListener {
-                viewModel.deleteNotes(oldNotes.data.id!!)
+                viewModel.deleteNotes(oldNotes.data)
                 dialog.dismiss()
             }
             no?.setOnClickListener { dialog.dismiss() }

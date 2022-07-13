@@ -9,7 +9,7 @@ import com.joydas1902.notes.databinding.ItemNotesBinding
 import com.joydas1902.notes.mvvm.Notes
 import com.joydas1902.notes.ui.fragments.HomeFragmentDirections
 
-class NotesAdapter(var notesList: List<Notes>) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
+class NotesAdapter(private var notesList: List<Notes>) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
 
     fun filtering(filteredList: ArrayList<Notes>) {
         notesList = filteredList
@@ -23,7 +23,7 @@ class NotesAdapter(var notesList: List<Notes>) : RecyclerView.Adapter<NotesAdapt
     }
 
     override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
-        val notes = notesList.get(position)
+        val notes = notesList[position]
         holder.binding.notesTitle.text = notes.title
         holder.binding.notesItem.text = notes.notes
         holder.binding.notesDate.text = notes.date
