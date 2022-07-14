@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".ui.fragments.EditNotesFragment">
 
     <LinearLayout
@@ -18,7 +19,8 @@
             android:hint="@string/title"
             android:padding="10dp"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:maxLines="1"
             android:background="@drawable/edit_text_shape" />
 
@@ -29,7 +31,8 @@
             android:hint="@string/subtitle"
             android:layout_marginTop="10dp"
             android:padding="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:maxLines="1"
             android:background="@drawable/edit_text_shape" />
 
@@ -46,7 +49,7 @@
                 android:layout_marginStart="10dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#999999"/>
+                android:textColor="@color/white"/>
 
             <ImageView
                 android:id="@+id/greenDot"
@@ -78,7 +81,9 @@
             android:hint="@string/app_name"
             android:layout_marginTop="10dp"
             android:padding="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="bold"
             android:background="@drawable/edit_text_shape"
             android:gravity="start"/>
 
@@ -90,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_gravity="bottom|end"
-        android:backgroundTint="@color/sky"
+        android:backgroundTint="@color/white"
         android:src="@drawable/ic_baseline_done_24"
         android:contentDescription="saveNoteButton" />
 

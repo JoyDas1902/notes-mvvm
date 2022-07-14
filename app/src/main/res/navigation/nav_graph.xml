@@ -12,10 +12,12 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_editNotesFragment"
-            app:destination="@id/editNotesFragment" />
+            app:destination="@id/editNotesFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
         <action
             android:id="@+id/action_homeFragment_to_createNotesFragment"
-            app:destination="@id/createNotesFragment" />
+            app:destination="@id/createNotesFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/createNotesFragment"
@@ -24,7 +26,8 @@
         tools:layout="@layout/fragment_create_notes" >
         <action
             android:id="@+id/action_createNotesFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/editNotesFragment"
@@ -33,7 +36,8 @@
         tools:layout="@layout/fragment_edit_notes" >
         <action
             android:id="@+id/action_editNotesFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
         <argument
             android:name="data"
             app:argType="com.joydas1902.notes.mvvm.Notes" />

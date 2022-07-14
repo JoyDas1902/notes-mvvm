@@ -1,5 +1,6 @@
 package com.joydas1902.notes.ui.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -29,9 +30,9 @@ class NotesAdapter(private var notesList: List<Notes>) : RecyclerView.Adapter<No
         holder.binding.notesDate.text = notes.date
 
         when (notes.priority) {
-            "1" -> holder.binding.notesPriority.setBackgroundResource(R.drawable.green_dot)
-            "2" -> holder.binding.notesPriority.setBackgroundResource(R.drawable.yellow_dot)
-            "3" -> holder.binding.notesPriority.setBackgroundResource(R.drawable.red_dot)
+            "1" -> holder.binding.cardView.setCardBackgroundColor(Color.GREEN)
+            "2" -> holder.binding.cardView.setCardBackgroundColor(Color.YELLOW)
+            "3" -> holder.binding.cardView.setCardBackgroundColor(Color.RED)
         }
 
         holder.binding.root.setOnClickListener {
