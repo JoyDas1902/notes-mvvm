@@ -75,29 +75,8 @@ class EditNotesFragment : Fragment() {
         }
 
         binding.saveNoteButton.setOnClickListener { updateNote(it) }
-        setHasOptionsMenu(true)
-        return binding.root
-    }
 
-    private fun updateNote(it: View?) {
-        val title = binding.title.text.toString()
-        val subTitle = binding.subTitle.text.toString()
-        val notes = binding.notes.text.toString()
-        val date = SimpleDateFormat().format(Date()).toString()
-
-        val data = Notes(oldNotes.data.id, title, subTitle, notes, date, priority)
-        viewModel.updateNotes(data)
-
-        Navigation.findNavController(it!!).navigate((R.id.action_editNotesFragment_to_homeFragment))
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.delete_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.deleteIcon) {
+        binding.deleteIcon.setOnClickListener {
             val dialog = BottomSheetDialog(requireContext())
             dialog.setContentView(R.layout.delete_dialog)
             dialog.show()
@@ -111,6 +90,18 @@ class EditNotesFragment : Fragment() {
             }
             no?.setOnClickListener { dialog.dismiss() }
         }
-        return super.onOptionsItemSelected(item)
+        return binding.root
+    }
+
+    private fun updateNote(it: View?) {
+        val title = binding.title.text.toString()
+        val subTitle = binding.subTitle.text.toString()
+        val notes = binding.notes.text.toString()
+        val date = SimpleDateFormat().format(Date()).toString()
+
+        val data = Notes(oldNotes.data.id, title, subTitle, notes, date, priority)
+        viewModel.updateNotes(data)
+
+        Navigation.findNavController(it!!).navigate((R.id.action_editNotesFragment_to_homeFragment))
     }
 }

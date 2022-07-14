@@ -25,13 +25,26 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
+                android:id="@+id/allNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_shape"
+                android:layout_marginEnd="10dp"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="All"
+                android:textStyle="bold|italic"
+                android:textColor="@color/black"/>
+
+            <TextView
                 android:id="@+id/high"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_shape"
                 android:padding="10dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="High"
                 android:backgroundTint="@color/green"
                 android:textStyle="bold|italic"
@@ -44,8 +57,8 @@
                 android:layout_marginStart="10dp"
                 android:background="@drawable/edit_text_shape"
                 android:padding="10dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="Medium"
                 android:backgroundTint="@color/yellow"
                 android:textStyle="bold|italic"
@@ -58,25 +71,21 @@
                 android:layout_marginStart="10dp"
                 android:background="@drawable/edit_text_shape"
                 android:padding="10dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="Low"
                 android:backgroundTint="@color/red"
                 android:textStyle="bold|italic"
                 android:textColor="@color/black"/>
 
-            <TextView
-                android:id="@+id/allNotes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edit_text_shape"
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:padding="10dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="All"
-                android:textStyle="bold|italic"
-                android:textColor="@color/black"/>
+                android:background="@drawable/edit_text_shape"
+                app:iconifiedByDefault="false"
+                app:defaultQueryHint="Search..."/>
 
         </LinearLayout>
 

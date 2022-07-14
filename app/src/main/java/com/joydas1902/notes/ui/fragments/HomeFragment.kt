@@ -1,7 +1,10 @@
 package com.joydas1902.notes.ui.fragments
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -74,39 +77,25 @@ class HomeFragment : Fragment() {
         binding.addNoteButton.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_createNotesFragment)
         }
-        setHasOptionsMenu(true)
-        return binding.root
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.search_menu, menu)
-
-        val item = menu.findItem(R.id.searchIcon)
-        val searchView = item.actionView as android.widget.SearchView
-
-        searchView.queryHint = "Search notes..."
-        searchView.setOnQueryTextListener(object : android.widget.SearchView.OnQueryTextListener {
+        binding.searchView.setOnQueryTextListener(object : OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 notesFiltering(query)
                 return true
             }
-
             override fun onQueryTextChange(newText: String?): Boolean {
                 notesFiltering(newText)
                 return true
             }
-
         })
-        super.onCreateOptionsMenu(menu, inflater)
+        return binding.root
     }
 
     private fun notesFiltering(newText: String?) {
         val filteredList = arrayListOf<Notes>()
-        for(i in oldNotes) {
-            if(i.title!!.contains(newText!!) or i.subTitle!!.contains(newText)) {
+        for(i in oldNotes)
+            if(i.title!!.contains(newText!!) or i.notes!!.contains(newText))
                 filteredList.add(i)
-            }
-        }
         adapter.filtering(filteredList)
     }
 }
