@@ -76,7 +76,7 @@
             <View
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="150dp"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/ic_baseline_delete_24"
                 android:id="@+id/deleteIcon"/>
 
