@@ -94,7 +94,7 @@ class HomeFragment : Fragment() {
     private fun notesFiltering(newText: String?) {
         val filteredList = arrayListOf<Notes>()
         for(i in oldNotes)
-            if(i.title!!.contains(newText!!) or i.notes!!.contains(newText))
+            if(i.title!!.lowercase().contains(newText!!) or i.notes!!.lowercase().contains(newText))
                 filteredList.add(i)
         adapter.filtering(filteredList)
     }
