@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="10dp"
+            android:padding="5dp"
             android:gravity="center_vertical"
             app:layout_constraintBottom_toTopOf="@+id/recyclerViewHome"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,11 +29,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_shape"
-                android:backgroundTint="@color/teal_200"
-                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:layout_marginEnd="5dp"
                 android:padding="10dp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
                 android:text="All"
                 android:textSize="16sp"
                 android:textStyle="italic"
@@ -45,8 +43,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_shape"
                 android:padding="10dp"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
+                android:layout_marginEnd="5dp"
                 android:text="High"
                 android:textSize="16sp"
                 android:backgroundTint="@color/green"
@@ -57,14 +54,12 @@
                 android:id="@+id/medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:background="@drawable/edit_text_shape"
                 android:padding="10dp"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
+                android:layout_marginEnd="5dp"
                 android:text="Medium"
                 android:textSize="16sp"
-                android:backgroundTint="@color/yellow"
+                android:backgroundTint="#FFE500"
                 android:textStyle="italic"
                 android:textColor="@color/black"/>
 
@@ -72,11 +67,9 @@
                 android:id="@+id/low"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:background="@drawable/edit_text_shape"
                 android:padding="10dp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
+                android:layout_marginEnd="5dp"
                 android:text="Low"
                 android:textSize="16sp"
                 android:backgroundTint="@color/red"
@@ -87,11 +80,10 @@
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
                 android:background="@drawable/edit_text_shape"
-                android:backgroundTint="@color/purple_200"
-                app:iconifiedByDefault="false"
-                app:defaultQueryHint="Search"/>
+                android:backgroundTint="@color/purple_700"
+                app:defaultQueryHint="Search..."
+                app:iconifiedByDefault="false" />
 
         </LinearLayout>
 
@@ -113,6 +105,7 @@
             android:src="@drawable/ic_baseline_add_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:maxImageSize="35dp"
             android:contentDescription="addNoteButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

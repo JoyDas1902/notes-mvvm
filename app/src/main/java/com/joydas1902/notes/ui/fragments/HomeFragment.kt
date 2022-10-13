@@ -17,7 +17,6 @@ import com.joydas1902.notes.mvvm.NotesViewModel
 import com.joydas1902.notes.ui.adapter.NotesAdapter
 
 class HomeFragment : Fragment() {
-
     private lateinit var binding: FragmentHomeBinding
     val viewModel: NotesViewModel by viewModels()
     var oldNotes = arrayListOf<Notes>()

@@ -5,7 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 
 class NotesViewModel(application: Application): AndroidViewModel(application) {
-
     private val dao = NotesDatabase.getNotesDatabase(application).getNotesDao()
     private val repository = NotesRepository(dao)
 

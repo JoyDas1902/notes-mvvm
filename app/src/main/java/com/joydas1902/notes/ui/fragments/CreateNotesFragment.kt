@@ -1,10 +1,10 @@
 package com.joydas1902.notes.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.joydas1902.notes.R
@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class CreateNotesFragment : Fragment() {
-
     private lateinit var binding: FragmentCreateNotesBinding
     private var priority = "3"
     private val viewModel: NotesViewModel by viewModels()

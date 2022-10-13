@@ -16,7 +16,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class EditNotesFragment : Fragment() {
-
     private val oldNotes by navArgs<EditNotesFragmentArgs>()
     private lateinit var binding: FragmentEditNotesBinding
     private var priority = "3"
@@ -77,6 +76,7 @@ class EditNotesFragment : Fragment() {
         binding.saveNoteButton.setOnClickListener { updateNote(it) }
 
         binding.deleteIcon.setOnClickListener {
+            val view = it;
             val dialog = BottomSheetDialog(requireContext())
             dialog.setContentView(R.layout.delete_dialog)
             dialog.show()
@@ -87,6 +87,7 @@ class EditNotesFragment : Fragment() {
             yes?.setOnClickListener {
                 viewModel.deleteNotes(oldNotes.data)
                 dialog.dismiss()
+                Navigation.findNavController(view!!).navigate((R.id.action_editNotesFragment_to_homeFragment))
             }
             no?.setOnClickListener { dialog.dismiss() }
         }

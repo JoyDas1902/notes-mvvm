@@ -3,7 +3,6 @@ package com.joydas1902.notes.mvvm
 import androidx.lifecycle.LiveData
 
 class NotesRepository(private val dao: NotesDao) {
-
     fun getNotes(): LiveData<List<Notes>> = dao.getNotes()
 
     fun getHighNotes(): LiveData<List<Notes>> = dao.getHighNotes()
