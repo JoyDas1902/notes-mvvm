@@ -9,7 +9,7 @@ class NotesRepository(private val dao: NotesDao) {
     fun getMediumNotes(): LiveData<List<Notes>> = dao.getMediumNotes()
     fun getLowNotes(): LiveData<List<Notes>> = dao.getLowNotes()
 
-    fun insertNotes(notes: Notes) { dao.insertNotes(notes) }
-    fun deleteNotes(notes: Notes) { dao.deleteNotes(notes) }
-    fun updateNotes(notes: Notes) { dao.updateNotes(notes) }
+    suspend fun insertNotes(notes: Notes) = dao.insertNotes(notes)
+    suspend fun deleteNotes(notes: Notes) = dao.deleteNotes(notes)
+    suspend fun updateNotes(notes: Notes) = dao.updateNotes(notes)
 }

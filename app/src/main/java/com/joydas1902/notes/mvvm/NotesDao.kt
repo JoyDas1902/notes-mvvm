@@ -19,11 +19,11 @@ interface NotesDao {
     fun getLowNotes(): LiveData<List<Notes>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertNotes(notes:Notes)
+    suspend fun insertNotes(notes:Notes)
 
     @Delete
-    fun deleteNotes(notes: Notes)
+    suspend fun deleteNotes(notes: Notes)
 
     @Update
-    fun updateNotes(notes: Notes)
+    suspend fun updateNotes(notes: Notes)
 }
